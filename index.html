@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GIF Search</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron text-center mt-3">
+            <h1>
+                <strong>GIF Search</strong>
+            </h1>
+            <p>Type anything in the search bar to pull up a series of gifs! Click the buttons below to see gifs related to your keyword.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-body border">
+                    <form>
+                        <!--Forms for input-->
+                        <!--search form-->
+                        <div class="form-group" id="gifKeyword">
+                            <label for="searchTerm">GIF Keyword:</label>
+                            <!--id of search term to link to js-->
+                            <input type="text" class="form-control" id="searchTerm">
+                        </div>
+                        <!--dropdown for # of gifs shown-->
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Number of GIFs:</label>
+                            <select class="form-control" id="gifNumber">
+                                <option value="10">10</option>
+                                <option value="5">5</option>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+
+                        <!--search button-->
+                        <button type="search" class="btn btn-secondary" id="searchButton">
+                            <i class="fas fa-search"></i>
+                            Search</button>
+                        <!--clear  button-->
+                        <button type="clear" class="btn btn-secondary" id="clear">
+                            <i class="far fa-trash-alt"></i>
+                            Clear Results</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <!--div to display buttons after theyve been searched-->
+                <div class="ml-2" id="button-display"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!--Card for enitre input-->
+                <div class="card mt-5 mb-5 invisible">
+                    <div class="card-header">
+                        <i class="fas fa-table"></i>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="gif-results">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

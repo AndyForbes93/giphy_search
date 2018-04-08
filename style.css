@@ -1,0 +1,37 @@
+body{
+    background:#bccad6
+}
+.card-header {
+
+    background-color: #667292;
+    color: white;
+
+}
+.card-body{
+    background-color: #8d9db6;
+    color:#f1e3dd;
+}
+
+.border {
+    border-color: #2A3F4F;
+    border: 2px 2px;
+}
+
+
+.jumbotron {
+    color:#f1e3dd;
+    background-color: #667292;
+   
+    border-radius: 0px 0px 10px 10px;
+}
+
+.result
+{
+    background-color: #E9EFEF;
+    border: 0px 0px 
+}
+
+
+.btn{
+    background-color: 	#95A5A7
+    }
