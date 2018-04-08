@@ -12,8 +12,8 @@ $(document).ready(function () {
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
       gifName + "&api_key=dc6zaTOxFJmzC&limit=" + number;
 
-      //makes card visible
-      $(".card").removeClass("invisible");
+    //makes card visible
+    $(".card").removeClass("invisible");
 
     // Performing an AJAX request with the queryURL
     $.ajax({
@@ -36,8 +36,6 @@ $(document).ready(function () {
 
           var rating = results[i].rating;
 
-          rating.toUpperCase;
-
           // Creating a paragraph tag with the result item's rating
           var p = $("<p>").text("Rating: " + rating);
 
@@ -46,13 +44,13 @@ $(document).ready(function () {
           // Setting the src attribute of the image to a property pulled off the result item
           gifImage.attr("src", results[i].images.fixed_height_still.url);
 
-          gifImage.attr("animate" , results[i].images.fixed_height.url);
+          gifImage.attr("animate", results[i].images.fixed_height.url);
 
-          gifImage.attr("still" ,results[i].images.fixed_height_still.url);
+          gifImage.attr("still", results[i].images.fixed_height_still.url);
 
-          gifImage.attr("currentState" , gifImage.attr("src"));
+          gifImage.attr("currentState", gifImage.attr("src"));
 
-          
+
 
           // Appending the paragraph and image tag to the animalDiv
           gifDiv.append(p);
@@ -62,11 +60,11 @@ $(document).ready(function () {
           $(".gif-results").prepend(gifDiv);
         }
 
-      
+
       });
   }
-  $(".gifImage").on("click" , function(){
-    $(this).attr("src" ,  $(this).attr(results.images.fixed_height.url));
+  $(".gifImage").on("click", function () {
+    $(this).attr("src", $(this).attr(results.images.fixed_height.url));
   });
   // This function handles events where a gif button is clicked
   $("#searchButton").on("click", function (event) {
@@ -107,23 +105,23 @@ $(document).ready(function () {
   }
 
 
-//this function will run the display git function when the topic button is clicked
+  //this function will run the display git function when the topic button is clicked
   $(document).on("click", ".gifButton", displayGifs);
 
   //this function changes between animing gifs and making the gif still
-  $(document).on("click" , ".gifImage" , function(){
-      var currentState = $(this).attr("currentState");
-      var stillState = $(this).attr("still");
-      var animateState = $(this).attr("animate");
-    
+  $(document).on("click", ".gifImage", function () {
+    var currentState = $(this).attr("currentState");
+    var stillState = $(this).attr("still");
+    var animateState = $(this).attr("animate");
 
-      if(currentState === stillState){
-        $(this).attr("src" , animateState);
-        $(this).attr("currentState" , animateState);
-      }else{
-        $(this).attr("src" , stillState);
-        $(this).attr("currentState" , stillState);
-      }
+
+    if (currentState === stillState) {
+      $(this).attr("src", animateState);
+      $(this).attr("currentState", animateState);
+    } else {
+      $(this).attr("src", stillState);
+      $(this).attr("currentState", stillState);
+    }
   });
 
   // Calling the renderButtons function to display the intial buttons
